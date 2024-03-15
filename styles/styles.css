@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* whole calculator*/
+.Calculator {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px; 
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/*top part with display*/
+.top {
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+/*bot part wiith buttons*/
+.bot {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
