@@ -121,7 +121,7 @@ bt3.addEventListener("click", function () {
 
     if (operant1 === "") {
 
-        operant1 += "23";
+        operant1 += "3";
 
     }else if(operator.length === 0 && operant1 !== "" ){ 
         
@@ -134,6 +134,71 @@ bt3.addEventListener("click", function () {
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
 
         operant2 += "3";
+
+    }
+});
+
+bt4.addEventListener("click", function () {
+
+    if (operant1 === "") {
+
+        operant1 += "4";
+
+    }else if(operator.length === 0 && operant1 !== "" ){ 
+        
+        operant1 += "4";
+        
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
+
+        operant2 += "4";
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
+
+        operant2 += "4";
+
+    }
+});
+
+
+bt5.addEventListener("click", function () {
+
+    if (operant1 === "") {
+
+        operant1 += "5";
+
+    }else if(operator.length === 0 && operant1 !== "" ){ 
+        
+        operant1 += "5";
+        
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
+
+        operant2 += "5";
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
+
+        operant2 += "5";
+
+    }
+});
+
+
+bt6.addEventListener("click", function () {
+
+    if (operant1 === "") {
+
+        operant1 += "6";
+
+    }else if(operator.length === 0 && operant1 !== "" ){ 
+        
+        operant1 += "6";
+        
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
+
+        operant2 += "6";
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
+
+        operant2 += "6";
 
     }
 });
