@@ -25,6 +25,19 @@ var operant1 = "";
 var operant2 = "";
 var operator = [];
 
+btEqual.addEventListener("click", function () { // EQUAL 
+
+    if ( operant1 !== "" && operant2!== "" && operator[0] ===  "+" && result === "") {
+
+        result = +operant1 + +operant2;
+
+        operant1 = "";
+        operant2 = "";
+        operator.length = 0;
+    }
+
+});
+
 btAdd.addEventListener("click", function () {
 
     if (operator.length === 0 && operant1 !== "" ){
@@ -34,6 +47,20 @@ btAdd.addEventListener("click", function () {
     }else if(operator.length === 0 && operant1 === ""){
 
         //TOAST INPUT A NUMBER FIRST 
+
+    }
+
+});
+
+btSub.addEventListener("click", function () {
+
+    if(operator.length === 0 && operant1 !== ""){
+
+        operator[0] = "-";
+
+    }else if (operator.length === 0 && operant1 === ""){
+
+        //TOAST INPUT NBR1 FIRST
 
     }
 
@@ -80,20 +107,6 @@ bt2.addEventListener("click", function () {
 
     }
 });
-
-
-btEqual.addEventListener("click", function () { // EQUAL 
-
-    if ( operant1 !== "" && operant2!== "" && operator[0] ===  "+" && result === "") {
-
-        result = +operant1 + +operant2;
-
-        operant1 = "";
-        operant2 = "";
-        operator.length = 0;
-    }
-
-})
 
 
 bt0.addEventListener("click", function () {
@@ -264,4 +277,17 @@ bt9.addEventListener("click", function () {
         operant2 += "9";
 
     }
+});
+
+btEqual.addEventListener("click", function () { // EQUAL with "-"
+
+    if ( operant1 !== "" && operant2!== "" && operator[0] ===  "-" && result === "") {
+
+        result = +operant1 - +operant2;
+
+        operant1 = "";
+        operant2 = "";
+        operator.length = 0;
+    }
+
 });
