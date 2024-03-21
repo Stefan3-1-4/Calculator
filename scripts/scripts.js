@@ -202,3 +202,66 @@ bt6.addEventListener("click", function () {
 
     }
 });
+
+bt7.addEventListener("click", function () {
+
+    if (operant1 === "") {
+
+        operant1 += "7";
+
+    }else if(operator.length === 0 && operant1 !== "" ){ 
+        
+        operant1 += "7";
+        
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
+
+        operant2 += "7";
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
+
+        operant2 += "7";
+
+    }
+});
+
+bt8.addEventListener("click", function () {
+
+    if (operant1 === "") {
+
+        operant1 += "8";
+
+    }else if(operator.length === 0 && operant1 !== "" ){ 
+        
+        operant1 += "8";
+        
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
+
+        operant2 += "8";
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
+
+        operant2 += "8";
+
+    }
+});
+
+bt9.addEventListener("click", function () {
+
+    if (operant1 === "") {
+
+        operant1 += "9";
+
+    }else if(operator.length === 0 && operant1 !== "" ){ 
+        
+        operant1 += "9";
+        
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
+
+        operant2 += "9";
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
+
+        operant2 += "9";
+
+    }
+});
