@@ -116,3 +116,24 @@ bt0.addEventListener("click", function () {
         
     }
 });
+
+bt3.addEventListener("click", function () {
+
+    if (operant1 === "") {
+
+        operant1 += "23";
+
+    }else if(operator.length === 0 && operant1 !== "" ){ 
+        
+        operant1 += "3";
+        
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
+
+        operant2 += "3";
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
+
+        operant2 += "3";
+
+    }
+});
