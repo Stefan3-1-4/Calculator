@@ -66,6 +66,19 @@ btSub.addEventListener("click", function () {
 
 });
 
+bt0,btMult.addEventListener("click", function () {
+    
+    if(operator.length === 0 && operant1 !== ""){
+
+        operator[0] = "*";
+
+    }else if (operator.length === 0 && operant1 === ""){
+
+        //TOAST INPUT NBR1 FIRST
+
+    }
+})
+
 bt1.addEventListener("click", function () {
 
     if (operant1 === "") { // if operannt1 not set = operant1+"1"
@@ -284,6 +297,19 @@ btEqual.addEventListener("click", function () { // EQUAL with "-"
     if ( operant1 !== "" && operant2!== "" && operator[0] ===  "-" && result === "") {
 
         result = +operant1 - +operant2;
+
+        operant1 = "";
+        operant2 = "";
+        operator.length = 0;
+    }
+
+});
+
+btEqual.addEventListener("click", function () { // EQUAL with "-"
+
+    if ( operant1 !== "" && operant2!== "" && operator[0] ===  "*" && result === "") {
+
+        result = +operant1 * +operant2;
 
         operant1 = "";
         operant2 = "";
