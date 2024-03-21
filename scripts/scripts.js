@@ -142,21 +142,60 @@ bt0.addEventListener("click", function () {
 
     if (operant1 === "") { // if operannt1 not set = operant1+"1"
 
-        
+     operant1 += "0";
 
     }else if(operator.length === 0 && operant1 !== "" ){ // operator not set + operant1 set = operant1 add+"1"
         
-        operant1 += "0";
+        operant1 += "0.0";
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){ // operator2 not set && operant+operator1 set = operator2+"1";
 
-    
+        operant2 += "0.";
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){ // operator2 set && operant+operator1 set = operator2+"1";
 
         operant2 += "0";
         
     }
+});
+
+
+btDeci.addEventListener("click", function () {
+
+    if(operant1 =="") { //if press "." before operant1 > "" 
+
+        operant1 += "0.";
+
+    }else if (operant1 !== "" && operator.length === 0 ) { // if press "." after operant1 but not operator
+
+        if( operant1.includes ("." ) ) {
+
+            // nothing because already decimal engaged
+
+        } else {
+
+            operant1 += ".";
+
+        }
+        
+
+    }else if (operant1 !== "" && operator.length !== 0 && operant2 === "" ) { //when press 0 before operator1 and operant
+
+        operant2 += "0."
+    }else if (operant1 !== "" && operator.length !== 0 && operator2 !== "" ) {
+
+        if (operant2.includes(".")) {
+
+            // nothing because already decimal engaged
+
+        }else {
+
+            operant2 += ".";
+
+        }
+
+    }
+
 });
 
 bt3.addEventListener("click", function () {
