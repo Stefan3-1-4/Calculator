@@ -66,8 +66,8 @@ btSub.addEventListener("click", function () {
 
 });
 
-bt0,btMult.addEventListener("click", function () {
-    
+btMult.addEventListener("click", function () {
+
     if(operator.length === 0 && operant1 !== ""){
 
         operator[0] = "*";
@@ -77,7 +77,10 @@ bt0,btMult.addEventListener("click", function () {
         //TOAST INPUT NBR1 FIRST
 
     }
-})
+
+});
+
+
 
 bt1.addEventListener("click", function () {
 
@@ -305,7 +308,7 @@ btEqual.addEventListener("click", function () { // EQUAL with "-"
 
 });
 
-btEqual.addEventListener("click", function () { // EQUAL with "-"
+btEqual.addEventListener("click", function () { // EQUAL with "*"
 
     if ( operant1 !== "" && operant2!== "" && operator[0] ===  "*" && result === "") {
 
