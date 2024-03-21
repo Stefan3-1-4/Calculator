@@ -66,7 +66,7 @@ bt2.addEventListener("click", function () {
 
         operant1 += "2";
 
-    }else if(operator.length === 0 && operant1 !== "" ){ // if operator not set + operant1 set = operant1 add+"2" 
+    }else if(operator.length === 0 && operant1 !== "" ){ 
         
         operant1 += "2";
         
@@ -81,7 +81,8 @@ bt2.addEventListener("click", function () {
     }
 });
 
-btEqual.addEventListener("click", function () {
+
+btEqual.addEventListener("click", function () { // EQUAL 
 
     if ( operant1 !== "" && operant2!== "" && operator[0] ===  "+" && result === "") {
 
@@ -94,3 +95,24 @@ btEqual.addEventListener("click", function () {
 
 })
 
+
+bt0.addEventListener("click", function () {
+
+    if (operant1 === "") { // if operannt1 not set = operant1+"1"
+
+        
+
+    }else if(operator.length === 0 && operant1 !== "" ){ // operator not set + operant1 set = operant1 add+"1"
+        
+        operant1 += "0";
+        
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){ // operator2 not set && operant+operator1 set = operator2+"1";
+
+    
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){ // operator2 set && operant+operator1 set = operator2+"1";
+
+        operant2 += "0";
+        
+    }
+});
