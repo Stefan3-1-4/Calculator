@@ -198,6 +198,15 @@ btDeci.addEventListener("click", function () {
 
 });
 
+btClear.addEventListener("click", function() {
+
+    operant1 = "";
+    operant2 = "";
+    operator.length = 0;
+
+});
+
+
 bt3.addEventListener("click", function () {
 
     if (operant1 === "") {
