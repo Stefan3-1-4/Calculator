@@ -21,8 +21,22 @@ var btEqual = document.getElementById("equal")
 var operationArray = new Array(3);
 
 var operant1 = ""; 
-var operant2 = 0;
+var operant2 = "";
 var operator = [];
+
+btAdd.addEventListener("click", function () {
+
+    if (operator.length === 0 && operant1 !== "" ){
+
+        operator[0] = "+";
+    
+    }else if(operator.length === 0 && operant1 === ""){
+
+        //TOAST INPUT A NUMBER FIRST 
+
+    }
+
+});
 
 bt1.addEventListener("click", function () {
 
@@ -30,9 +44,17 @@ bt1.addEventListener("click", function () {
 
         operant1 += "1";
 
-    }else if(operator.length === 0 && operant1 > "" ){ // if operator1 already have value and operant value = 0 only than cancatonate 1
+    }else if(operator.length === 0 && operant1 !== "" ){ // if operator1 already have value and operant value = 0 only than cancatonate 1
         
         operant1 += "1";
+        
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
+
+        operant2 += "1";
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
+
+        operant2 += "2";
         
     }
 });
@@ -43,9 +65,17 @@ bt2.addEventListener("click", function () {
 
         operant1 += "2";
 
-    }else if(operator.length === 0 && operant1 > "" ){ // if operator1 already have value and operant value = 0 only than cancatonate 2 ...
+    }else if(operator.length === 0 && operant1 !== "" ){ // if operator1 already have value and operant value = 0 only than cancatonate 2 ...
         
         operant1 += "2";
         
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
+
+        operant2 += "2";
+
+    }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
+
+        operant2 += "2";
+
     }
 });
