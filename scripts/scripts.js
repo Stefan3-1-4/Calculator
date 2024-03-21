@@ -20,6 +20,9 @@ var btDeci = document.getElementById("decimal")
 var btEqual = document.getElementById("equal")
 var operationArray = new Array(3);
 var result = ""
+operationArray[0] = operant1;
+operationArray[1] = operant2;
+operationArray[2] = operator;
 
 var operant1 = ""; 
 var operant2 = "";
@@ -203,6 +206,24 @@ btClear.addEventListener("click", function() {
     operant1 = "";
     operant2 = "";
     operator.length = 0;
+
+});
+
+btDel.addEventListener("click", function() {
+
+    if (operant2 !== ""){
+
+        operant2 = operant2.slice(0, -1); //check if operant 2 is asigned if it is u can remove
+
+    }else if (operator !== "") {
+
+        operator.length = 0; // check if operator have value if yes u can remove that value 
+
+    }else if (operant1 !== "") {
+
+        operant1 = operant1.slice(0, -1); // check if operant2 is asigned if it is u can remove 
+
+    }
 
 });
 
