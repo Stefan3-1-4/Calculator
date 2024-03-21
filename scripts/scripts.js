@@ -12,7 +12,7 @@ var bt0 = document.getElementById("bt0")
 var btClear = document.getElementById("clr")
 var btDel = document.getElementById("del")
 var btModulo = document.getElementById("mod")
-var btDiv = document.getElementById("div")
+var btDivision = document.getElementById("div")
 var btMult = document.getElementById("mult")
 var btSub = document.getElementById("sub")
 var btAdd = document.getElementById("add")
@@ -74,12 +74,25 @@ btMult.addEventListener("click", function () {
 
     }else if (operator.length === 0 && operant1 === ""){
 
-        //TOAST INPUT NBR1 FIRST
+        //TOAST MULTI NBR 1 
 
     }
 
 });
 
+btDivision.addEventListener("click", function() {
+
+    if(operator.length === 0 && operant1 !== "" ) {
+    
+        operator[0] = "/";
+
+    }else if (operator.length === 0 && operant1 === "") {
+
+        //TOAST DIVISION NBR 1 
+
+    }
+
+})
 
 
 bt1.addEventListener("click", function () {
@@ -297,7 +310,7 @@ bt9.addEventListener("click", function () {
 
 btEqual.addEventListener("click", function () { // EQUAL with "-"
 
-    if ( operant1 !== "" && operant2!== "" && operator[0] ===  "-" && result === "") {
+    if ( operant1 !== "" && operant2 !== "" && operator[0] ===  "-" && result === "") {
 
         result = +operant1 - +operant2;
 
@@ -310,7 +323,7 @@ btEqual.addEventListener("click", function () { // EQUAL with "-"
 
 btEqual.addEventListener("click", function () { // EQUAL with "*"
 
-    if ( operant1 !== "" && operant2!== "" && operator[0] ===  "*" && result === "") {
+    if ( operant1 !== "" && operant2 !== "" && operator[0] ===  "*" && result === "") {
 
         result = +operant1 * +operant2;
 
@@ -320,3 +333,17 @@ btEqual.addEventListener("click", function () { // EQUAL with "*"
     }
 
 });
+
+btEqual.addEventListener("click", function () {
+
+    if ( operant1 !== "" && operant2 !== "" && operator[0] === "/" && result === "") {
+
+        result = +operant1 / +operant2;
+
+        operant1 = "";
+        operant2 = "";
+        operator.lenght = 0
+
+    }
+
+})
