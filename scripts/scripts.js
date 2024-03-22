@@ -24,6 +24,40 @@ operationArray[0] = operant1;
 operationArray[1] = operant2;
 operationArray[2] = operator;
 
+
+
+var display = document.getElementById("display");
+
+function updateDisplayContent(content) {
+ 
+    display.textContent = content;
+
+}
+
+function updateDisplayNow() {
+
+    var displayContent = operant1 || "0";
+    if ( operator.length !== 0 && operant2 === "" ) {
+
+        displayContent += "" + operator[0] + "" ; 
+
+    }else if ( operator.length !== 0 && operant2 !== "" ) {
+
+        displayContent += "" + operator[0] + operant2;
+
+    }else if ( operant1 === "" && operator.length === 0 && operant2 === "" && result !== "") {
+
+        displayContent = result;
+
+    }else if (operant1 !== "" && operator.length === 0 && operant2 ==="" && result !=="") {
+
+        result = "";
+
+    }
+    updateDisplayContent(displayContent);
+
+}
+
 var operant1 = ""; 
 var operant2 = "";
 var operator = [];
@@ -37,6 +71,7 @@ btEqual.addEventListener("click", function () { // EQUAL
         operant1 = "";
         operant2 = "";
         operator.length = 0;
+        updateDisplayNow();
     }
 
 });
@@ -46,6 +81,7 @@ btAdd.addEventListener("click", function () {
     if (operator.length === 0 && operant1 !== "" ){
 
         operator[0] = "+";
+        updateDisplayNow();
     
     }else if(operator.length === 0 && operant1 === ""){
 
@@ -60,6 +96,7 @@ btSub.addEventListener("click", function () {
     if(operator.length === 0 && operant1 !== ""){
 
         operator[0] = "-";
+        updateDisplayNow();
 
     }else if (operator.length === 0 && operant1 === ""){
 
@@ -74,6 +111,7 @@ btMult.addEventListener("click", function () {
     if(operator.length === 0 && operant1 !== ""){
 
         operator[0] = "*";
+        updateDisplayNow();
 
     }else if (operator.length === 0 && operant1 === ""){
 
@@ -88,6 +126,7 @@ btDivision.addEventListener("click", function() {
     if(operator.length === 0 && operant1 !== "" ) {
     
         operator[0] = "/";
+        updateDisplayNow();
 
     }else if (operator.length === 0 && operant1 === "") {
 
@@ -103,18 +142,22 @@ bt1.addEventListener("click", function () {
     if (operant1 === "") { // if operannt1 not set = operant1+"1"
 
         operant1 += "1";
+        updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ // operator not set + operant1 set = operant1 add+"1"
         
         operant1 += "1";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){ // operator2 not set && operant+operator1 set = operator2+"1";
 
         operant2 += "1";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){ // operator2 set && operant+operator1 set = operator2+"1";
 
         operant2 += "1";
+        updateDisplayNow();
         
     }
 });
@@ -124,18 +167,22 @@ bt2.addEventListener("click", function () {
     if (operant1 === "") {
 
         operant1 += "2";
+        updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ 
         
         operant1 += "2";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
 
         operant2 += "2";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
 
         operant2 += "2";
+        updateDisplayNow();
 
     }
 });
@@ -146,18 +193,22 @@ bt0.addEventListener("click", function () {
     if (operant1 === "") { // if operannt1 not set = operant1+"1"
 
      operant1 += "0";
+     updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ // operator not set + operant1 set = operant1 add+"1"
         
         operant1 += "0.0";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){ // operator2 not set && operant+operator1 set = operator2+"1";
 
         operant2 += "0.";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){ // operator2 set && operant+operator1 set = operator2+"1";
 
         operant2 += "0";
+        updateDisplayNow();
         
     }
 });
@@ -168,6 +219,7 @@ btDeci.addEventListener("click", function () {
     if(operant1 =="") { //if press "." before operant1 > "" 
 
         operant1 += "0.";
+        updateDisplayNow();
 
     }else if (operant1 !== "" && operator.length === 0 ) { // if press "." after operant1 but not operator
 
@@ -178,6 +230,7 @@ btDeci.addEventListener("click", function () {
         } else {
 
             operant1 += ".";
+            updateDisplayNow();
 
         }
         
@@ -185,6 +238,8 @@ btDeci.addEventListener("click", function () {
     }else if (operant1 !== "" && operator.length !== 0 && operant2 === "" ) { //when press 0 before operator1 and operant
 
         operant2 += "0."
+        updateDisplayNow();
+
     }else if (operant1 !== "" && operator.length !== 0 && operant2 !== "" ) {
 
         if (operant2.includes(".")) {
@@ -194,6 +249,7 @@ btDeci.addEventListener("click", function () {
         }else {
 
             operant2 += ".";
+            updateDisplayNow();
 
         }
 
@@ -206,6 +262,8 @@ btClear.addEventListener("click", function() {
     operant1 = "";
     operant2 = "";
     operator.length = 0;
+    updateDisplayNow();
+    updateDisplayNow();
 
 });
 
@@ -214,14 +272,17 @@ btDel.addEventListener("click", function() {
     if (operant2 !== ""){
 
         operant2 = operant2.slice(0, -1); //check if operant 2 is asigned if it is u can remove
+        updateDisplayNow();
 
     }else if (operator !== "") {
 
         operator.length = 0; // check if operator have value if yes u can remove that value 
+        updateDisplayNow();
 
     }else if (operant1 !== "") {
 
         operant1 = operant1.slice(0, -1); // check if operant2 is asigned if it is u can remove 
+        updateDisplayNow();
 
     }
 
@@ -233,18 +294,22 @@ bt3.addEventListener("click", function () {
     if (operant1 === "") {
 
         operant1 += "3";
+        updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ 
         
         operant1 += "3";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
 
         operant2 += "3";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
 
         operant2 += "3";
+        updateDisplayNow();
 
     }
 });
@@ -253,19 +318,24 @@ bt4.addEventListener("click", function () {
 
     if (operant1 === "") {
 
+        updateDisplayNow();
         operant1 += "4";
+        updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ 
         
         operant1 += "4";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
 
         operant2 += "4";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
 
         operant2 += "4";
+        updateDisplayNow();
 
     }
 });
@@ -276,18 +346,22 @@ bt5.addEventListener("click", function () {
     if (operant1 === "") {
 
         operant1 += "5";
+        updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ 
         
         operant1 += "5";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
 
         operant2 += "5";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
 
         operant2 += "5";
+        updateDisplayNow();
 
     }
 });
@@ -298,18 +372,22 @@ bt6.addEventListener("click", function () {
     if (operant1 === "") {
 
         operant1 += "6";
+        updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ 
         
         operant1 += "6";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
 
         operant2 += "6";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
 
         operant2 += "6";
+        updateDisplayNow();
 
     }
 });
@@ -319,18 +397,22 @@ bt7.addEventListener("click", function () {
     if (operant1 === "") {
 
         operant1 += "7";
+        updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ 
         
         operant1 += "7";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
 
         operant2 += "7";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
 
         operant2 += "7";
+        updateDisplayNow();
 
     }
 });
@@ -340,18 +422,22 @@ bt8.addEventListener("click", function () {
     if (operant1 === "") {
 
         operant1 += "8";
+        updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ 
         
         operant1 += "8";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
 
         operant2 += "8";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
 
         operant2 += "8";
+        updateDisplayNow();
 
     }
 });
@@ -361,18 +447,22 @@ bt9.addEventListener("click", function () {
     if (operant1 === "") {
 
         operant1 += "9";
+        updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ 
         
         operant1 += "9";
+        updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){
 
         operant2 += "9";
+        updateDisplayNow();
 
     }else if (operator.length !== 0 && operant1 !== "" && operant2 !== ""){
 
         operant2 += "9";
+        updateDisplayNow();
 
     }
 });
@@ -386,6 +476,8 @@ btEqual.addEventListener("click", function () { // EQUAL with "-"
         operant1 = "";
         operant2 = "";
         operator.length = 0;
+        updateDisplayNow();
+
     }
 
 });
@@ -399,6 +491,8 @@ btEqual.addEventListener("click", function () { // EQUAL with "*"
         operant1 = "";
         operant2 = "";
         operator.length = 0;
+        updateDisplayNow();
+
     }
 
 });
@@ -411,7 +505,8 @@ btEqual.addEventListener("click", function () {
 
         operant1 = "";
         operant2 = "";
-        operator.lenght = 0
+        operator.length = 0
+        updateDisplayNow();
 
     }
 
