@@ -185,7 +185,7 @@ btDeci.addEventListener("click", function () {
     }else if (operant1 !== "" && operator.length !== 0 && operant2 === "" ) { //when press 0 before operator1 and operant
 
         operant2 += "0."
-    }else if (operant1 !== "" && operator.length !== 0 && operator2 !== "" ) {
+    }else if (operant1 !== "" && operator.length !== 0 && operant2 !== "" ) {
 
         if (operant2.includes(".")) {
 
@@ -416,3 +416,4 @@ btEqual.addEventListener("click", function () {
     }
 
 })
+
