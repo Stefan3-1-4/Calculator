@@ -542,3 +542,46 @@ btEqual.addEventListener("click", function () {
 
 })
 
+// StylingThisSection 
+
+var canvas = document.getElementById("matrixCrazy");
+var context = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbers = "1234567890";
+var all = letters + numbers;
+
+var fontsize = 20;
+var columns = Math.floor(canvas.width / fontsize); // .flor 3.2 = 3   3.5 = 3   
+
+var drops = [];
+
+for (var drp = 0; drp < columns; drp++) {
+    drops[drp] = 1;
+}
+
+var create = () => {
+
+    context.fillStyle = "rgba(0, 0, 0, 0.05)";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    context.fillStyle = "#0f0"; 
+    context.font = fontsize + "px monospace";
+
+    for (var crt = 0; crt < drops.length; crt++) {
+        var text = all.charAt(Math.floor(Math.random() * all.length));
+        var x = crt * fontsize; // x position (horizontal)
+        var y = drops[crt] * fontsize; // y position (vertical)
+        context.fillText(text, x, y);
+
+        if (y > canvas.height && Math.random() > 0.975) {
+            drops[crt] = 0;
+        }
+        drops[crt]++;
+    }
+}
+
+setInterval(create, 80);

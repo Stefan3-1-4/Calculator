@@ -2,21 +2,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* whole calculator*/
 .Calculator {
     display: flex;
     flex-direction: column;
-    max-width: 300px; 
+    max-width: 300px;
     border: 2px solid #ccc;
     border-radius: 5px;
 }
 
 /*top part with display*/
 .top {
-    padding: 10px;
+    padding: 0px;
     background-color: #f0f0f0;
 }
 
@@ -26,14 +29,55 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
     padding: 10px;
+
+    background-color: #000;
+    color: #0f0; 
+    border: 1px solid #0f0; 
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: "Courier New", Courier, monospace; 
+    cursor: pointer;
 }
-#display{
+
+#display {
+   
+
     display: flex;
     max-width: 250px;
     max-height: 40px;
     justify-content: right;
-    background-color: #f0f0f0;
-    border: solid;
-    border-color: #ccc;
+    background-color: #000;
+    border: solid 1px #0f0; 
     border-radius: 5px;
+    font-size: 24px;
+    font-family: "Courier New", Courier, monospace; 
+    color: #0f0; 
+}
+
+#matrixCrazy {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+#clr, #del, #mod, #div, #bt7, #bt8, #bt9, #mult, #bt4, #bt5, #bt6, #sub, #bt1, #bt2, #bt3, #add, #bt0, #decimal, #equal {
+    background-color: #000;
+    color: #0f0; 
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: "Courier New"; 
+    cursor: pointer;
+}
+
+
+#clr:hover, #del:hover, #mod:hover, #div:hover, #bt7:hover, #bt8:hover, #bt9:hover, #mult:hover, #bt4:hover, #bt5:hover, #bt6:hover, #sub:hover, #bt1:hover, #bt2:hover, #bt3:hover, #add:hover, #bt0:hover, #decimal:hover, #equal:hover {
+    background-color: #0f0;
+    color: #ff0000; 
 }
