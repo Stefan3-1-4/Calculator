@@ -191,12 +191,12 @@ bt0.addEventListener("click", function () {
 
     if (operant1 === "") { // if operannt1 not set = operant1+"1"
 
-     operant1 += "0";
+     operant1 += "0.0";
      updateDisplayNow();
 
     }else if(operator.length === 0 && operant1 !== "" ){ // operator not set + operant1 set = operant1 add+"1"
         
-        operant1 += "0.0";
+        operant1 += "0";
         updateDisplayNow();
         
     }else if (operator.length !== 0 && operant1 !== "" && operant2 === ""){ // operator2 not set && operant+operator1 set = operator2+"1";
