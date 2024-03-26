@@ -262,6 +262,7 @@ btClear.addEventListener("click", function() {
     operant1 = "";
     operant2 = "";
     operator.length = 0;
+    result = "";
     updateDisplayNow();
     updateDisplayNow();
 
