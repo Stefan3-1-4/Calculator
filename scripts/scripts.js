@@ -22,8 +22,7 @@ var operationArray = new Array(3);
 var result = ""
 operationArray[0] = operant1;
 operationArray[1] = operant2;
-operationArray[2] = operator;
-
+operationArray[2] = operator; 
 
 
 var display = document.getElementById("display");
@@ -58,8 +57,8 @@ function updateDisplayNow() {
 
 }
 
-var operant1 = ""; 
-var operant2 = "";
+var operant1 = "";     
+var operant2 = "";                              // operants OPERANTS operants
 var operator = [];
 
 btEqual.addEventListener("click", function () { // EQUAL 
@@ -282,7 +281,37 @@ btDel.addEventListener("click", function() {
 
     }else if (operant1 !== "") {
 
-        operant1 = operant1.slice(0, -1); // check if operant2 is asigned if it is u can remove 
+        operant1 = operant1.slice(0, -1); // check if operant 1 is asigned if it is u can remove 
+        updateDisplayNow();
+
+    }
+
+});
+
+btModulo.addEventListener("click", function () {
+
+    if ( operant1 === 0 && operant2 === 0 && operator.length === 0 ) {
+
+
+
+    }else if (operant1 !== "" && operant2 === "" && operator.length === 0 ) {
+
+        operator[0] = "%" ; 
+        updateDisplayNow();
+
+    }
+
+});
+
+btEqual.addEventListener("click", function() {
+
+    if ( operant1 !=="" && operant2 !== "" && operator[0] === "%") {
+
+        result = (+operant1 * +operant2)/100
+
+        operant1 = "";
+        operant2 = "";
+        operator.length = 0;
         updateDisplayNow();
 
     }
