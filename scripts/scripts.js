@@ -61,20 +61,6 @@ var operant1 = "";
 var operant2 = "";                              // operants OPERANTS operants
 var operator = [];
 
-btEqual.addEventListener("click", function () { // EQUAL 
-
-    if ( operant1 !== "" && operant2!== "" && operator[0] ===  "+" && result === "") {
-
-        result = +operant1 + +operant2;
-
-        operant1 = "";
-        operant2 = "";
-        operator.length = 0;
-        updateDisplayNow();
-    }
-
-});
-
 btAdd.addEventListener("click", function () {
 
     if (operator.length === 0 && operant1 !== "" ){
@@ -305,7 +291,7 @@ btModulo.addEventListener("click", function () {
 
 btEqual.addEventListener("click", function() {
 
-    if ( operant1 !=="" && operant2 !== "" && operator[0] === "%") {
+    if ( operant1 !=="" && operant2 !== "" && operator[0] === "%") { // "%" equal
 
         result = (+operant1 * +operant2)/100
 
@@ -314,6 +300,41 @@ btEqual.addEventListener("click", function() {
         operator.length = 0;
         updateDisplayNow();
 
+    } else if ( operant1 !== "" && operant2 !== "" && operator[0] ===  "-" && result === "") { // "-" equal
+
+        result = +operant1 - +operant2;
+
+        operant1 = "";
+        operant2 = "";
+        operator.length = 0;
+        updateDisplayNow();
+
+    } else  if ( operant1 !== "" && operant2 !== "" && operator[0] ===  "*" && result === "") { // "*" equal
+
+        result = +operant1 * +operant2;
+
+        operant1 = "";
+        operant2 = "";
+        operator.length = 0;
+        updateDisplayNow();
+
+    } else if ( operant1 !== "" && operant2 !== "" && operator[0] === "/" && result === "") { // "/" equal 
+
+        result = +operant1 / +operant2;
+
+        operant1 = "";
+        operant2 = "";
+        operator.length = 0
+        updateDisplayNow();
+
+    } else if ( operant1 !== "" && operant2!== "" && operator[0] ===  "+" && result === "") { // "+" equal
+
+        result = +operant1 + +operant2;
+
+        operant1 = "";
+        operant2 = "";
+        operator.length = 0;
+        updateDisplayNow();
     }
 
 });
@@ -496,51 +517,6 @@ bt9.addEventListener("click", function () {
 
     }
 });
-
-btEqual.addEventListener("click", function () { // EQUAL with "-"
-
-    if ( operant1 !== "" && operant2 !== "" && operator[0] ===  "-" && result === "") {
-
-        result = +operant1 - +operant2;
-
-        operant1 = "";
-        operant2 = "";
-        operator.length = 0;
-        updateDisplayNow();
-
-    }
-
-});
-
-btEqual.addEventListener("click", function () { // EQUAL with "*"
-
-    if ( operant1 !== "" && operant2 !== "" && operator[0] ===  "*" && result === "") {
-
-        result = +operant1 * +operant2;
-
-        operant1 = "";
-        operant2 = "";
-        operator.length = 0;
-        updateDisplayNow();
-
-    }
-
-});
-
-btEqual.addEventListener("click", function () {
-
-    if ( operant1 !== "" && operant2 !== "" && operator[0] === "/" && result === "") {
-
-        result = +operant1 / +operant2;
-
-        operant1 = "";
-        operant2 = "";
-        operator.length = 0
-        updateDisplayNow();
-
-    }
-
-})
 
 // StylingThisSection 
 
